@@ -64,13 +64,15 @@ export default function App() {
       </motion.nav>
 
       {/* ─── Hero ─── */}
-      <section id="home">
-        <HeroSection />
+      <section id="home" className="h-screen w-full snap-start snap-always flex items-center justify-center relative overflow-hidden">
+        <ScrollReveal className="w-full h-full">
+          <HeroSection />
+        </ScrollReveal>
       </section>
 
       {/* ─── Skills ─── */}
-      <section id="skills" className="py-32 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section id="skills" className="h-screen w-full snap-start snap-always flex items-center justify-center bg-transparent relative">
+        <div className="max-w-7xl mx-auto w-full px-6">
           <ScrollReveal>
             <SkillsSection />
           </ScrollReveal>
@@ -80,8 +82,8 @@ export default function App() {
       <div className="section-divider mx-auto max-w-4xl" />
 
       {/* ─── Experience ─── */}
-      <section id="experience" className="py-32 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section id="experience" className="h-screen w-full snap-start snap-always flex items-center justify-center bg-transparent relative">
+        <div className="max-w-7xl mx-auto w-full px-6">
           <ScrollReveal>
             <ExperienceSection />
           </ScrollReveal>
@@ -91,8 +93,8 @@ export default function App() {
       <div className="section-divider mx-auto max-w-4xl" />
 
       {/* ─── Contact ─── */}
-      <section id="connect" className="py-32 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section id="connect" className="h-screen w-full snap-start snap-always flex items-center justify-center bg-transparent relative">
+        <div className="max-w-7xl mx-auto w-full px-6">
           <ScrollReveal>
             <ContactSection />
           </ScrollReveal>
