@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import HeroSection from './components/HeroSection'
 import SkillsSection from './components/SkillsSection'
@@ -24,6 +24,26 @@ function ScrollReveal({ children, className = '', delay = 0 }) {
 }
 
 export default function App() {
+  const [activeSection, setActiveSection] = useState('home')
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    const sections = document.querySelectorAll('section')
+    sections.forEach((section) => observer.observe(section))
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <div className="relative w-full min-h-screen" style={{ background: '#0a0a0a' }}>
       {/* Navbar */}
@@ -40,16 +60,22 @@ export default function App() {
           </span>
 
           <div className="nav-glass rounded-full px-1 py-1 hidden md:flex gap-1">
-            {['Home', 'Skills', 'Experience', 'Connect'].map((item, i) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${i === 0 ? 'bg-orange-500/20 text-orange-400' : 'text-gray-400 hover:text-white'
-                  }`}
-              >
-                {item}
-              </a>
-            ))}
+            {['Home', 'Skills', 'Experience', 'Connect'].map((item) => {
+              const id = item.toLowerCase()
+              const isActive = activeSection === id
+              return (
+                <a
+                  key={item}
+                  href={`#${id}`}
+                  className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${isActive
+                    ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25'
+                    : 'text-gray-400 hover:text-white hover:bg-white/5'
+                    }`}
+                >
+                  {item}
+                </a>
+              )
+            })}
           </div>
 
           <button className="glow-btn px-5 py-2 rounded-full text-sm font-semibold text-white flex items-center gap-2">

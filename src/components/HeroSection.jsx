@@ -145,7 +145,7 @@ export default function HeroSection() {
                             Hey, I am <span className="text-white font-semibold">Noah</span>
                         </p>
 
-                        <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold leading-[0.9] tracking-tight mb-6">
+                        <h1 className="text-6xl md:text-9xl lg:text-[11rem] font-extrabold leading-[0.85] tracking-tighter mb-8 -ml-1">
                             <span className="hero-gradient-text">Web</span>
                             <br />
                             <span className="accent-text" style={{ WebkitTextFillColor: 'var(--color-accent)' }}>
@@ -213,6 +213,23 @@ export default function HeroSection() {
                     </motion.div>
                 ))}
             </div>
+            {/* ── Peeking Image Placeholder ── */}
+            <motion.div
+                className="absolute bottom-0 left-0 right-0 h-[25vh] z-20 overflow-hidden flex items-end justify-center pointer-events-none"
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 0.8 }}
+            >
+                <div className="w-full max-w-5xl mx-auto h-full bg-gradient-to-t from-[#1a1a1a] to-transparent flex items-end justify-center pb-8">
+                    <div className="relative w-[80%] h-[120%] bg-gray-900 rounded-t-3xl border-t border-r border-l border-white/10 shadow-2xl transform translate-y-[20%]">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-white/20 font-bold text-4xl uppercase tracking-widest">Featured Work</span>
+                        </div>
+                        {/* Overlay gradient to fade it out at the top if needed */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/80" />
+                    </div>
+                </div>
+            </motion.div>
         </div>
     )
 }
