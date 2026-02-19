@@ -45,18 +45,17 @@ export default function App() {
   }, [])
 
   return (
-    <div className="relative w-full min-h-screen" style={{ background: '#0a0a0a' }}>
-      {/* Navbar */}
+    <div className="relative w-full h-screen overflow-hidden bg-[#0a0a0a]">
+      {/* Navbar (Fixed outside scroll container) */}
       <motion.nav
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4 flex justify-center"
-        style={{ background: 'rgba(10,10,10,0.7)', backdropFilter: 'blur(16px)' }}
+        className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4 flex justify-center pointer-events-none"
       >
-        <div className="w-full max-w-7xl flex items-center justify-between">
-          <span className="text-xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-primary)' }}>
-            Daniel<span className="text-xs align-super text-gray-1000"> Fr</span>
+        <div className="w-full max-w-7xl flex items-center justify-between pointer-events-auto">
+          <span className="text-xl font-bold tracking-tight text-white" style={{ fontFamily: 'var(--font-primary)' }}>
+            Daniel<span className="text-xs align-super text-gray-500"> Fr</span>
           </span>
 
           <div className="nav-glass rounded-full px-1 py-1 hidden md:flex gap-1">
@@ -80,7 +79,7 @@ export default function App() {
 
           <button className="glow-btn px-5 py-2 rounded-full text-sm font-semibold text-white flex items-center gap-2">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
@@ -89,49 +88,55 @@ export default function App() {
         </div>
       </motion.nav>
 
-      {/* ─── Hero ─── */}
-      {/* ─── Hero ─── */}
-      <section id="home" className="h-screen w-full snap-start snap-always flex items-center justify-center relative overflow-hidden">
-        <ScrollReveal className="w-full h-full">
-          <HeroSection />
-        </ScrollReveal>
-      </section>
-
-      {/* ─── Skills ─── */}
-      <section id="skills" className="h-screen w-full snap-start snap-always flex items-center justify-center bg-transparent relative">
-        <div className="max-w-7xl mx-auto w-full px-6">
-          <ScrollReveal>
-            <SkillsSection />
+      {/* Main Snap Container */}
+      <main
+        id="snap-container"
+        className="w-full h-full overflow-y-scroll snap-y snap-mandatory scroll-smooth"
+        style={{ scrollBehavior: 'smooth' }}
+      >
+        {/* ─── Hero ─── */}
+        <section id="home" className="h-screen w-full snap-start snap-always flex items-center justify-center relative overflow-hidden">
+          <ScrollReveal className="w-full h-full">
+            <HeroSection />
           </ScrollReveal>
-        </div>
-      </section>
+        </section>
 
-      <div className="section-divider mx-auto max-w-4xl" />
+        {/* ─── Skills ─── */}
+        <section id="skills" className="h-screen w-full snap-start snap-always flex items-center justify-center bg-transparent relative">
+          <div className="max-w-7xl mx-auto w-full px-6">
+            <ScrollReveal>
+              <SkillsSection />
+            </ScrollReveal>
+          </div>
+        </section>
 
-      {/* ─── Experience ─── */}
-      <section id="experience" className="h-screen w-full snap-start snap-always flex items-center justify-center bg-transparent relative">
-        <div className="max-w-7xl mx-auto w-full px-6">
-          <ScrollReveal>
-            <ExperienceSection />
-          </ScrollReveal>
-        </div>
-      </section>
+        <div className="section-divider mx-auto max-w-4xl opacity-0" />
 
-      <div className="section-divider mx-auto max-w-4xl" />
+        {/* ─── Experience ─── */}
+        <section id="experience" className="h-screen w-full snap-start snap-always flex items-center justify-center bg-transparent relative">
+          <div className="max-w-7xl mx-auto w-full px-6">
+            <ScrollReveal>
+              <ExperienceSection />
+            </ScrollReveal>
+          </div>
+        </section>
 
-      {/* ─── Contact ─── */}
-      <section id="connect" className="h-screen w-full snap-start snap-always flex items-center justify-center bg-transparent relative">
-        <div className="max-w-7xl mx-auto w-full px-6">
-          <ScrollReveal>
-            <ContactSection />
-          </ScrollReveal>
-        </div>
-      </section>
+        <div className="section-divider mx-auto max-w-4xl opacity-0" />
 
-      {/* Footer */}
-      <footer className="py-8 text-center border-t border-white/5">
-        <p className="text-xs text-gray-600">© 2026 noah. All rights reserved.</p>
-      </footer>
+        {/* ─── Contact ─── */}
+        <section id="connect" className="h-screen w-full snap-start snap-always flex items-center justify-center bg-transparent relative">
+          <div className="max-w-7xl mx-auto w-full px-6">
+            <ScrollReveal>
+              <ContactSection />
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="py-8 text-center border-t border-white/5 snapped-footer scroll-snap-align-start">
+          <p className="text-xs text-gray-600">© 2026 noah. All rights reserved.</p>
+        </footer>
+      </main>
     </div>
   )
 }
