@@ -64,6 +64,7 @@ export default function App() {
       </motion.nav>
 
       {/* ─── Hero ─── */}
+      {/* ─── Hero ─── */}
       <section id="home" className="h-screen w-full snap-start snap-always flex items-center justify-center relative overflow-hidden">
         <ScrollReveal className="w-full h-full">
           <HeroSection />
