@@ -128,8 +128,8 @@ export default function HeroSection() {
                 className="absolute inset-0 pointer-events-none"
                 style={{
                     background:
-                        'radial-gradient(ellipse 80% 70% at 70% 50%, rgba(249,115,22,0.06) 0%, transparent 60%), ' +
-                        'radial-gradient(ellipse 60% 60% at 20% 80%, rgba(99,102,241,0.04) 0%, transparent 50%)',
+                        'radial-gradient(ellipse 110% 90% at 70% 50%, rgba(249,115,22,0.14) 0%, transparent 65%), ' +
+                        'radial-gradient(ellipse 70% 65% at 20% 80%, rgba(99,102,241,0.06) 0%, transparent 55%)',
                 }}
             />
 
@@ -145,7 +145,7 @@ export default function HeroSection() {
                             Hey, I am <span className="text-white font-semibold">Noah</span>
                         </p>
 
-                        <h1 className="text-3xl md:text-9xl lg:text-[11rem] font-extrabold leading-[0.85] tracking-tighter mb-8 -ml-1">
+                        <h1 className="text-6xl md:text-9xl lg:text-[12rem] font-extrabold leading-none tracking-tighter mb-10 -ml-1 pb-2">
                             <span className="hero-gradient-text">Web</span>
                             <br />
                             <span className="accent-text" style={{ WebkitTextFillColor: 'var(--color-accent)' }}>
@@ -153,7 +153,7 @@ export default function HeroSection() {
                             </span>
                         </h1>
 
-                        <p className="text-gray-400 text-lg md:text-xl mt-6 max-w-xl leading-relaxed">
+                        <p className="text-gray-400 text-lg md:text-xl mt-8 max-w-xl leading-relaxed relative z-20">
                             Crafting immersive digital experiences with modern technologies and pixel-perfect precision.
                         </p>
 

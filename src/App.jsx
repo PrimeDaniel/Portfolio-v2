@@ -50,7 +50,7 @@ export default function App() {
       <motion.nav
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        transition={{ duration: 1, delay: 0.2 }}
         className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4 flex justify-center pointer-events-none"
       >
         <div className="w-full max-w-7xl flex items-center justify-between pointer-events-auto">
@@ -58,7 +58,7 @@ export default function App() {
             Daniel<span className="text-xs align-super text-gray-500"> Fr</span>
           </span>
 
-          <div className="nav-glass rounded-full px-1 py-1 hidden md:flex gap-1">
+          <div className="nav-glass rounded-full px-3 py-2 hidden md:flex items-center justify-between min-w-[520px]">
             {['Home', 'Skills', 'Experience', 'Connect'].map((item) => {
               const id = item.toLowerCase()
               const isActive = activeSection === id
@@ -66,9 +66,9 @@ export default function App() {
                 <a
                   key={item}
                   href={`#${id}`}
-                  className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${isActive
+                  className={`px-10 py-2 rounded-full text-xl font-bold transition-all duration-300 ${isActive
                     ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25'
-                    : 'text-gray-400 hover:text-white hover:bg-white/5'
+                    : 'text-gray-400 hover:text-white hover:bg-white/10'
                     }`}
                 >
                   {item}

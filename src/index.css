@@ -49,6 +49,18 @@ body {
   border-radius: 3px;
 }
 
+/* Hide scrollbar for the main snap container to look like an app */
+#snap-container {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+#snap-container::-webkit-scrollbar {
+  display: none;
+}
+
 /* ════════════════════════════════════
    Floating image animations
    ════════════════════════════════════ */
