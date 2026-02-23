@@ -31,7 +31,7 @@ export default function ExperienceSection() {
 
     return (
         <div ref={ref} className="w-full">
-            <div className="mb-16 md:mb-24">
+            <div className="mb-10 md:mb-14">
                 <h2 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
                     My <span className="accent-text" style={{ WebkitTextFillColor: 'var(--color-accent)' }}>Journey</span>
                 </h2>
@@ -40,7 +40,7 @@ export default function ExperienceSection() {
                 </p>
             </div>
 
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
                 {experiences.map((exp, i) => (
                     <motion.div
                         key={exp.role}

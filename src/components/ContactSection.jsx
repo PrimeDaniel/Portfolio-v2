@@ -65,7 +65,7 @@ export default function ContactSection() {
 
                     <form className="flex flex-col gap-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
                         <div className="relative">
-                            <label className={`text-xs font-bold tracking-wider absolute left-4 transition-all duration-300 ${focusedField === 'name' || true ? '-top-2 bg-[#0a0a0a] px-2 text-orange-400' : 'top-4 text-gray-500'}`}>NAME</label>
+                            <label className={`text-xs font-bold tracking-wider absolute left-4 transition-all duration-300 ${focusedField === 'name' || true ? '-top-2 bg-[#111113] px-2 text-orange-400' : 'top-4 text-gray-500'}`}>NAME</label>
                             <input
                                 type="text"
                                 onFocus={() => setFocusedField('name')}
@@ -75,7 +75,7 @@ export default function ContactSection() {
                         </div>
 
                         <div className="relative">
-                            <label className={`text-xs font-bold tracking-wider absolute left-4 transition-all duration-300 ${focusedField === 'email' || true ? '-top-2 bg-[#0a0a0a] px-2 text-orange-400' : 'top-4 text-gray-500'}`}>EMAIL</label>
+                            <label className={`text-xs font-bold tracking-wider absolute left-4 transition-all duration-300 ${focusedField === 'email' || true ? '-top-2 bg-[#111113] px-2 text-orange-400' : 'top-4 text-gray-500'}`}>EMAIL</label>
                             <input
                                 type="email"
                                 onFocus={() => setFocusedField('email')}
@@ -85,7 +85,7 @@ export default function ContactSection() {
                         </div>
 
                         <div className="relative">
-                            <label className={`text-xs font-bold tracking-wider absolute left-4 transition-all duration-300 ${focusedField === 'message' || true ? '-top-2 bg-[#0a0a0a] px-2 text-orange-400' : 'top-4 text-gray-500'}`}>MESSAGE</label>
+                            <label className={`text-xs font-bold tracking-wider absolute left-4 transition-all duration-300 ${focusedField === 'message' || true ? '-top-2 bg-[#111113] px-2 text-orange-400' : 'top-4 text-gray-500'}`}>MESSAGE</label>
                             <textarea
                                 rows={4}
                                 onFocus={() => setFocusedField('message')}

@@ -292,3 +292,37 @@ body {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(249, 115, 22, 0.15);
 }
+
+/* ════════════════════════════════════
+   Scroll offset for fixed navbar
+   ════════════════════════════════════ */
+#snap-container {
+  scroll-padding-top: 80px;
+}
+
+/* ════════════════════════════════════
+   Heading glow for readability
+   ════════════════════════════════════ */
+h1,
+h2 {
+  text-shadow: 0 0 60px rgba(249, 115, 22, 0.06);
+}
+
+/* ════════════════════════════════════
+   Glow pulse for hero floating image
+   ════════════════════════════════════ */
+@keyframes glow-pulse-img {
+
+  0%,
+  100% {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 28px rgba(249, 115, 22, 0.15), 0 0 56px rgba(249, 115, 22, 0.06);
+  }
+}
+
+.glow-pulse-img {
+  animation: glow-pulse-img 4s ease-in-out infinite, float-slow 6s ease-in-out infinite;
+}

@@ -58,7 +58,7 @@ export default function App() {
             Daniel<span className="text-xs align-super text-gray-500"> Fr</span>
           </span>
 
-          <div className="nav-glass rounded-full px-3 py-2 hidden md:flex items-center justify-between flex-1 max-w-lg mx-6">
+          <div className="nav-glass rounded-full px-3 py-2 hidden md:flex items-center justify-between flex-1 max-w-xl mx-6">
             {['Home', 'Skills', 'Experience', 'Connect'].map((item) => {
               const id = item.toLowerCase()
               const isActive = activeSection === id
@@ -66,7 +66,7 @@ export default function App() {
                 <a
                   key={item}
                   href={`#${id}`}
-                  className={`px-10 py-2 rounded-full text-xl font-bold transition-all duration-300 ${isActive
+                  className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${isActive
                     ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25'
                     : 'text-gray-400 hover:text-white hover:bg-white/10'
                     }`}
@@ -77,9 +77,9 @@ export default function App() {
             })}
           </div>
 
-          <button className="flex-shrink-0 glow-btn px-7 py-2.5 rounded-full text-sm font-semibold text-white flex items-center gap-2 whitespace-nowrap">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 0 0 1-2-2v-4" />
+          <button className="flex-shrink-0 glow-btn px-8 py-3 rounded-full text-base font-semibold text-white flex items-center gap-2.5 whitespace-nowrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
@@ -134,7 +134,7 @@ export default function App() {
 
         {/* Footer */}
         <footer className="py-8 text-center border-t border-white/5 snapped-footer scroll-snap-align-start">
-          <p className="text-xs text-gray-600">© 2026 noah. All rights reserved.</p>
+          <p className="text-xs text-gray-600">© 2026 Noah. All rights reserved.</p>
         </footer>
       </main>
     </div>

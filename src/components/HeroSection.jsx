@@ -24,7 +24,7 @@ const floatingImages = [
             borderRadius: '28px',
             zIndex: 2,
         },
-        animClass: 'float-slow',
+        animClass: 'float-slow glow-pulse-img',
         delay: 0,
     },
     {
@@ -153,7 +153,7 @@ export default function HeroSection() {
                             </span>
                         </h1>
 
-                        <p className="text-gray-400 text-lg md:text-xl mt-8 max-w-xl leading-relaxed relative z-20">
+                        <p className="text-gray-400 text-lg md:text-xl max-w-xl leading-relaxed relative z-20">
                             Crafting immersive digital experiences with modern technologies and pixel-perfect precision.
                         </p>
 
