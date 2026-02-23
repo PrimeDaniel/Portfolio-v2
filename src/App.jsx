@@ -54,11 +54,11 @@ export default function App() {
         className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4 flex justify-center pointer-events-none"
       >
         <div className="w-full max-w-7xl flex items-center justify-between pointer-events-auto">
-          <span className="text-xl font-bold tracking-tight text-white" style={{ fontFamily: 'var(--font-primary)' }}>
+          <span className="flex-shrink-0 text-xl font-bold tracking-tight text-white" style={{ fontFamily: 'var(--font-primary)' }}>
             Daniel<span className="text-xs align-super text-gray-500"> Fr</span>
           </span>
 
-          <div className="nav-glass rounded-full px-3 py-2 hidden md:flex items-center justify-between min-w-[520px]">
+          <div className="nav-glass rounded-full px-3 py-2 hidden md:flex items-center justify-between flex-1 max-w-lg mx-6">
             {['Home', 'Skills', 'Experience', 'Connect'].map((item) => {
               const id = item.toLowerCase()
               const isActive = activeSection === id
@@ -77,7 +77,7 @@ export default function App() {
             })}
           </div>
 
-          <button className="glow-btn px-5 py-2 rounded-full text-sm font-semibold text-white flex items-center gap-2">
+          <button className="flex-shrink-0 glow-btn px-7 py-2.5 rounded-full text-sm font-semibold text-white flex items-center gap-2 whitespace-nowrap">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />

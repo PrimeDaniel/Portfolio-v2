@@ -136,11 +136,11 @@ body {
 
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(249, 115, 22, 0.15);
+    box-shadow: 0 0 14px rgba(249, 115, 22, 0.08);
   }
 
   50% {
-    box-shadow: 0 0 40px rgba(249, 115, 22, 0.3), 0 0 80px rgba(249, 115, 22, 0.1);
+    box-shadow: 0 0 24px rgba(249, 115, 22, 0.18), 0 0 50px rgba(249, 115, 22, 0.06);
   }
 }
 
@@ -236,12 +236,12 @@ body {
    ════════════════════════════════════ */
 .glow-btn {
   background: linear-gradient(135deg, var(--color-accent), #ea580c);
-  box-shadow: 0 4px 24px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.15);
   transition: all 0.3s ease;
 }
 
 .glow-btn:hover {
-  box-shadow: 0 6px 32px rgba(249, 115, 22, 0.5);
+  box-shadow: 0 6px 28px rgba(249, 115, 22, 0.28);
   transform: translateY(-2px);
 }
 
