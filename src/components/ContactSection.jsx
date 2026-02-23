@@ -11,6 +11,14 @@ export default function ContactSection() {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-60px' })
     const [focusedField, setFocusedField] = useState(null)
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+
+    const handleFocus = (field) => setFocusedField(field)
+    const handleBlur = (field) => setFocusedField(null)
+    const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value })
+
+    const isFloating = (field) => focusedField === field || formData[field].length > 0
+
 
     return (
         <div ref={ref} className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
@@ -65,31 +73,40 @@ export default function ContactSection() {
 
                     <form className="flex flex-col gap-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
                         <div className="relative">
-                            <label className={`text-xs font-bold tracking-wider absolute left-4 transition-all duration-300 ${focusedField === 'name' || true ? '-top-2 bg-[#111113] px-2 text-orange-400' : 'top-4 text-gray-500'}`}>NAME</label>
+                            <label className={`text-xs font-bold tracking-wider absolute left-4 transition-all duration-300 ${isFloating('name') ? '-top-2 bg-[#1b1b1d] px-2 text-orange-400 rounded-md shadow-[0_0_10px_#1b1b1d]' : 'top-4 text-gray-500 pointer-events-none'}`}>NAME</label>
                             <input
                                 type="text"
-                                onFocus={() => setFocusedField('name')}
-                                onBlur={() => setFocusedField(null)}
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                onFocus={() => handleFocus('name')}
+                                onBlur={() => handleBlur('name')}
                                 className="w-full bg-transparent border border-white/10 rounded-xl px-6 py-4 text-white text-lg outline-none focus:border-orange-500 transition-colors"
                             />
                         </div>
 
                         <div className="relative">
-                            <label className={`text-xs font-bold tracking-wider absolute left-4 transition-all duration-300 ${focusedField === 'email' || true ? '-top-2 bg-[#111113] px-2 text-orange-400' : 'top-4 text-gray-500'}`}>EMAIL</label>
+                            <label className={`text-xs font-bold tracking-wider absolute left-4 transition-all duration-300 ${isFloating('email') ? '-top-2 bg-[#1b1b1d] px-2 text-orange-400 rounded-md shadow-[0_0_10px_#1b1b1d]' : 'top-4 text-gray-500 pointer-events-none'}`}>EMAIL</label>
                             <input
                                 type="email"
-                                onFocus={() => setFocusedField('email')}
-                                onBlur={() => setFocusedField(null)}
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                onFocus={() => handleFocus('email')}
+                                onBlur={() => handleBlur('email')}
                                 className="w-full bg-transparent border border-white/10 rounded-xl px-6 py-4 text-white text-lg outline-none focus:border-orange-500 transition-colors"
                             />
                         </div>
 
                         <div className="relative">
-                            <label className={`text-xs font-bold tracking-wider absolute left-4 transition-all duration-300 ${focusedField === 'message' || true ? '-top-2 bg-[#111113] px-2 text-orange-400' : 'top-4 text-gray-500'}`}>MESSAGE</label>
+                            <label className={`text-xs font-bold tracking-wider absolute left-4 transition-all duration-300 ${isFloating('message') ? '-top-2 bg-[#1b1b1d] px-2 text-orange-400 rounded-md shadow-[0_0_10px_#1b1b1d]' : 'top-4 text-gray-500 pointer-events-none'}`}>MESSAGE</label>
                             <textarea
                                 rows={4}
-                                onFocus={() => setFocusedField('message')}
-                                onBlur={() => setFocusedField(null)}
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                onFocus={() => handleFocus('message')}
+                                onBlur={() => handleBlur('message')}
                                 className="w-full bg-transparent border border-white/10 rounded-xl px-6 py-4 text-white text-lg outline-none focus:border-orange-500 transition-colors resize-none"
                             />
                         </div>

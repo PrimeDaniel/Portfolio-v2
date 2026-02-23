@@ -2,7 +2,9 @@ import { useRef, useState, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import HeroSection from './components/HeroSection'
 import SkillsSection from './components/SkillsSection'
+import ProjectsSection from './components/ProjectsSection'
 import ExperienceSection from './components/ExperienceSection'
+import AboutSection from './components/AboutSection'
 import ContactSection from './components/ContactSection'
 
 /* ─── Scroll-animated wrapper ─── */
@@ -58,15 +60,15 @@ export default function App() {
             Daniel<span className="text-xs align-super text-gray-500"> Fr</span>
           </span>
 
-          <div className="nav-glass rounded-full px-3 py-2 hidden md:flex items-center justify-between flex-1 max-w-xl mx-6">
-            {['Home', 'Skills', 'Experience', 'Connect'].map((item) => {
+          <div className="nav-glass rounded-full px-3 py-2 hidden md:flex items-center justify-between flex-1 max-w-2xl mx-6">
+            {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Connect'].map((item) => {
               const id = item.toLowerCase()
               const isActive = activeSection === id
               return (
                 <a
                   key={item}
                   href={`#${id}`}
-                  className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${isActive
+                  className={`px-4 lg:px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${isActive
                     ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25'
                     : 'text-gray-400 hover:text-white hover:bg-white/10'
                     }`}
@@ -101,11 +103,33 @@ export default function App() {
           </ScrollReveal>
         </section>
 
+        {/* ─── About ─── */}
+        <section id="about" className="h-screen w-full snap-start snap-always flex items-center justify-center bg-transparent relative">
+          <div className="max-w-7xl mx-auto w-full px-6">
+            <ScrollReveal>
+              <AboutSection />
+            </ScrollReveal>
+          </div>
+        </section>
+
+        <div className="section-divider mx-auto max-w-4xl opacity-0" />
+
         {/* ─── Skills ─── */}
         <section id="skills" className="h-screen w-full snap-start snap-always flex items-center justify-center bg-transparent relative">
           <div className="max-w-7xl mx-auto w-full px-6">
             <ScrollReveal>
               <SkillsSection />
+            </ScrollReveal>
+          </div>
+        </section>
+
+        <div className="section-divider mx-auto max-w-4xl opacity-0" />
+
+        {/* ─── Projects ─── */}
+        <section id="projects" className="h-screen w-full snap-start snap-always flex items-center justify-center bg-transparent relative">
+          <div className="max-w-7xl mx-auto w-full px-6">
+            <ScrollReveal>
+              <ProjectsSection />
             </ScrollReveal>
           </div>
         </section>
